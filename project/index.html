@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天机运势 - 中西方玄学融合的专业运势测算平台</title>
+    <meta name="description" content="天机运势融合紫薇斗数、易经八卦、西方星座学等中西方玄学精髓，提供精准的个人运势分析、事业财运预测、感情婚姻指导等专业服务。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-gray': {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                        },
+                        'apple-blue': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sf-pro': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        'chinese': ['PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'SF Pro Display', 'sans-serif']
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                        '4xl': '2rem',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark-glass {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-mesh {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-padding {
+            padding: 6rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 4rem 0;
+            }
+        }
+        
+        .hero-text {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .nav-blur {
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(255, 255, 255, 0.72);
+        }
+        
+        .button-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(102, 126, 234, 0.4);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sf-pro text-apple-gray-900 smooth-scroll">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-apple-gray-200">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-apple-blue-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-white font-semibold text-sm">天</span>
+                    </div>
+                    <span class="text-xl font-semibold text-apple-gray-900">天机运势</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">玄学特色</a>
+                    <a href="#how-it-works" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">测算流程</a>
+                    <a href="#pricing" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">服务套餐</a>
+                    <a href="#testimonials" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">用户见证</a>
+                    <a href="#faq" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">玄学答疑</a>
+                </div>
+                
+                <button onclick="scrollToCalculator()" class="button-primary text-white px-6 py-2 rounded-full text-sm font-medium">
+                    立即测算
+                </button>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">玄学特色</a>
+                    <a href="#how-it-works" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">测算流程</a>
+                    <a href="#pricing" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">服务套餐</a>
+                    <a href="#testimonials" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">用户见证</a>
+                    <a href="#faq" class="text-apple-gray-600 hover:text-apple-gray-900 transition-colors text-sm font-medium">玄学答疑</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 gradient-mesh"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="hero-text font-bold text-white mb-6 font-chinese">
+                融汇中西玄学<br>
+                <span class="text-gradient">洞察命运天机</span>
+            </h1>
+            
+            <p class="text-xl sm:text-2xl text-white text-opacity-90 mb-12 max-w-4xl mx-auto leading-relaxed">
+                集紫薇斗数、易经八卦、西方星座学之大成<br>
+                运用千年玄学智慧与现代数据分析，为您揭示人生运势奥秘
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <button onclick="scrollToCalculator()" class="button-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
+                    免费体验玄学测算
+                </button>
+                <button class="glass-effect text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:bg-opacity-20 transition-all">
+                    探索玄学奥秘
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="glass-effect rounded-3xl p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-2">50万+</div>
+                    <div class="text-white text-opacity-80">玄学爱好者信赖</div>
+                </div>
+                <div class="glass-effect rounded-3xl p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-2">98.5%</div>
+                    <div class="text-white text-opacity-80">测算准确率</div>
+                </div>
+                <div class="glass-effect rounded-3xl p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-2">千年</div>
+                    <div class="text-white text-opacity-80">玄学传承精髓</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding bg-apple-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl sm:text-5xl font-bold text-apple-gray-900 mb-6 font-chinese">
+                    中西玄学融合特色
+                </h2>
+                <p class="text-xl text-apple-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    传承东方千年玄学智慧，融合西方星座学精髓，为您提供最全面的命运解析
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">☯️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">紫薇斗数精算</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        运用紫薇斗数十四主星排盘，结合生辰八字五行相生相克，精准分析您的先天命格与后天运势走向
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📖</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">易经八卦解析</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        依据《易经》六十四卦象变化，配合天干地支推演，洞察阴阳五行流转，预测人生起伏变化
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">⭐</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">西方星座学</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        融合十二星座、行星相位、宫位分析等西方占星学理论，全方位解读性格特质与运势趋向
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔮</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">姓名学奥义</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        运用三才五格、音韵五行等姓名学理论，分析姓名对个人运势的深层影响，提供改名建议
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🌟</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">奇门遁甲预测</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        借鉴奇门遁甲时空预测法，结合九宫八卦布局，为重要决策提供最佳时机与方位指导
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔒</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">玄学数据保护</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        严格遵循玄学保密传统，所有命理信息均采用加密存储，确保您的天机秘密绝对安全
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl sm:text-5xl font-bold text-apple-gray-900 mb-6 font-chinese">
+                    玄学测算流程
+                </h2>
+                <p class="text-xl text-apple-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    遵循古法测算仪轨，结合现代科技手段，三步即可获得专业命理分析
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-apple-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">提供生辰信息</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        输入您的姓名和准确出生时间，这是排盘算命的基础要素，决定着紫薇命盘和八字格局
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-apple-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">玄学算法运算</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        系统运用紫薇斗数、易经八卦、星座学等多重玄学理论，进行深度命理分析计算
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-apple-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">获得命理报告</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        即时生成包含运势评级、吉凶宜忌、改运建议的专业命理分析报告
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="section-padding relative overflow-hidden">
+        <div class="absolute inset-0 gradient-mesh"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6 font-chinese">
+                    开启您的玄学测算之旅
+                </h2>
+                <p class="text-xl text-white text-opacity-90 leading-relaxed">
+                    输入生辰信息，体验中西方玄学融合的专业命理分析
+                </p>
+            </div>
+
+            <!-- Input Form -->
+            <div id="inputForm" class="max-w-md mx-auto glass-effect rounded-3xl p-8 mb-8">
+                <h3 class="text-2xl font-bold text-apple-gray-900 text-center mb-8 font-chinese">
+                    请提供您的生辰信息
+                </h3>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-apple-gray-700 mb-3">
+                            姓名（影响姓名学分析）
+                        </label>
+                        <input 
+                            type="text" 
+                            id="userName" 
+                            class="w-full px-4 py-4 border border-apple-gray-300 rounded-2xl focus:ring-2 focus:ring-apple-blue-500 focus:border-transparent transition-all duration-200 bg-white"
+                            placeholder="请输入您的真实姓名"
+                            required
+                        >
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-apple-gray-700 mb-3">
+                            出生日期（用于排盘算命）
+                        </label>
+                        <input 
+                            type="date" 
+                            id="birthDate" 
+                            class="w-full px-4 py-4 border border-apple-gray-300 rounded-2xl focus:ring-2 focus:ring-apple-blue-500 focus:border-transparent transition-all duration-200 bg-white"
+                            required
+                        >
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        id="calculateBtn"
+                        class="w-full button-primary text-white py-4 px-6 rounded-2xl font-semibold text-lg"
+                    >
+                        开始玄学测算
+                    </button>
+                </form>
+            </div>
+
+            <!-- Loading Animation -->
+            <div id="loadingDiv" class="hidden max-w-md mx-auto text-center py-16">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-white mb-6"></div>
+                <p class="text-white text-lg font-chinese">正在运用玄学算法为您测算...</p>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsDiv" class="hidden max-w-5xl mx-auto">
+                <!-- User Info Header -->
+                <div class="glass-effect rounded-3xl p-6 mb-8 text-center">
+                    <h3 class="text-2xl font-bold text-apple-gray-900 font-chinese mb-2" id="resultName"></h3>
+                    <p class="text-apple-gray-600" id="resultDate"></p>
+                </div>
+
+                <!-- Fortune Score -->
+                <div class="glass-effect rounded-3xl p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-center text-apple-gray-900 font-chinese mb-8">
+                        玄学运势评级
+                    </h3>
+                    <div class="text-center">
+                        <div class="inline-block relative mb-6">
+                            <div class="w-32 h-32 rounded-full border-8 border-apple-gray-200 relative">
+                                <div id="scoreCircle" class="w-32 h-32 rounded-full border-8 border-transparent absolute top-0 left-0 transform -rotate-90 transition-all duration-1000"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span id="scoreText" class="text-3xl font-bold text-apple-gray-900"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="fortuneLevel" class="text-2xl font-bold font-chinese mb-2"></div>
+                            <div id="fortuneDescription" class="text-apple-gray-600"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Analysis -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- 宜 -->
+                    <div class="glass-effect rounded-3xl p-6">
+                        <h4 class="text-xl font-bold text-green-600 font-chinese mb-6 flex items-center">
+                            <span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-sm">✓</span>
+                            </span>
+                            今日宜行
+                        </h4>
+                        <ul id="favorableList" class="space-y-3 text-apple-gray-700"></ul>
+                    </div>
+
+                    <!-- 忌 -->
+                    <div class="glass-effect rounded-3xl p-6">
+                        <h4 class="text-xl font-bold text-red-600 font-chinese mb-6 flex items-center">
+                            <span class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-red-600 text-sm">✗</span>
+                            </span>
+                            今日忌行
+                        </h4>
+                        <ul id="unfavorableList" class="space-y-3 text-apple-gray-700"></ul>
+                    </div>
+                </div>
+
+                <!-- Detailed Fortune Analysis -->
+                <div class="glass-effect rounded-3xl p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-apple-gray-900 font-chinese mb-8">
+                        四象运势详解
+                    </h3>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">❤️</span>
+                            </div>
+                            <h4 class="font-bold text-apple-gray-900 mb-2">情缘运势</h4>
+                            <div id="loveScore" class="text-2xl font-bold text-red-500 mb-1"></div>
+                            <p id="loveDesc" class="text-sm text-apple-gray-600"></p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">💰</span>
+                            </div>
+                            <h4 class="font-bold text-apple-gray-900 mb-2">财富运势</h4>
+                            <div id="wealthScore" class="text-2xl font-bold text-green-500 mb-1"></div>
+                            <p id="wealthDesc" class="text-sm text-apple-gray-600"></p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">💼</span>
+                            </div>
+                            <h4 class="font-bold text-apple-gray-900 mb-2">事业运势</h4>
+                            <div id="careerScore" class="text-2xl font-bold text-blue-500 mb-1"></div>
+                            <p id="careerDesc" class="text-sm text-apple-gray-600"></p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🏥</span>
+                            </div>
+                            <h4 class="font-bold text-apple-gray-900 mb-2">健康运势</h4>
+                            <div id="healthScore" class="text-2xl font-bold text-yellow-500 mb-1"></div>
+                            <p id="healthDesc" class="text-sm text-apple-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Analysis -->
+                <div class="glass-effect rounded-3xl p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-apple-gray-900 font-chinese mb-6">
+                        玄学命理分析
+                    </h3>
+                    <div id="professionalAnalysis" class="prose prose-gray max-w-none text-apple-gray-700">
+                        <!-- Analysis content will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Lucky Elements -->
+                <div class="glass-effect rounded-3xl p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-apple-gray-900 font-chinese mb-8">
+                        开运元素指引
+                    </h3>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center p-4 bg-apple-gray-50 rounded-2xl">
+                            <div class="text-2xl mb-3">🎨</div>
+                            <div class="font-medium text-apple-gray-900">开运色彩</div>
+                            <div id="luckyColor" class="text-sm text-apple-gray-600 mt-2"></div>
+                        </div>
+                        <div class="text-center p-4 bg-apple-gray-50 rounded-2xl">
+                            <div class="text-2xl mb-3">🔢</div>
+                            <div class="font-medium text-apple-gray-900">幸运数字</div>
+                            <div id="luckyNumber" class="text-sm text-apple-gray-600 mt-2"></div>
+                        </div>
+                        <div class="text-center p-4 bg-apple-gray-50 rounded-2xl">
+                            <div class="text-2xl mb-3">🧭</div>
+                            <div class="font-medium text-apple-gray-900">吉利方位</div>
+                            <div id="luckyDirection" class="text-sm text-apple-gray-600 mt-2"></div>
+                        </div>
+                        <div class="text-center p-4 bg-apple-gray-50 rounded-2xl">
+                            <div class="text-2xl mb-3">⏰</div>
+                            <div class="font-medium text-apple-gray-900">吉时良辰</div>
+                            <div id="luckyTime" class="text-sm text-apple-gray-600 mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="text-center space-y-4">
+                    <button 
+                        id="newCalculationBtn"
+                        class="button-primary text-white py-4 px-8 rounded-2xl font-semibold text-lg"
+                    >
+                        重新测算
+                    </button>
+                    <div class="text-sm text-white text-opacity-70">
+                        * 本玄学测算结果仅供参考，请理性对待命理分析
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding bg-apple-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl sm:text-5xl font-bold text-apple-gray-900 mb-6 font-chinese">
+                    玄学服务套餐
+                </h2>
+                <p class="text-xl text-apple-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    选择适合您的命理服务套餐，获得更深入的玄学指导
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- 基础版 -->
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">入门体验</h3>
+                        <div class="text-4xl font-bold text-apple-blue-600 mb-2">免费</div>
+                        <p class="text-apple-gray-600">基础玄学测算体验</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            基础运势评级
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            今日宜忌指导
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            开运元素提示
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-apple-gray-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-apple-gray-400 text-xs">✗</span>
+                            </span>
+                            <span class="text-apple-gray-400">深度命理分析</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-apple-gray-200 text-apple-gray-800 py-4 px-6 rounded-2xl font-semibold hover:bg-apple-gray-300 transition-all">
+                        免费体验
+                    </button>
+                </div>
+
+                <!-- 专业版 -->
+                <div class="bg-white rounded-3xl p-8 card-hover border-2 border-apple-blue-500 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-apple-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">推荐</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">玄学精算</h3>
+                        <div class="text-4xl font-bold text-apple-blue-600 mb-2">¥29</div>
+                        <p class="text-apple-gray-600">深度玄学命理分析</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            包含入门版所有功能
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            紫薇斗数详解
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            易经八卦分析
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            星座运势解读
+                        </li>
+                    </ul>
+                    <button class="w-full button-primary text-white py-4 px-6 rounded-2xl font-semibold">
+                        立即购买
+                    </button>
+                </div>
+
+                <!-- 至尊版 -->
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-apple-gray-900 mb-4">大师级</h3>
+                        <div class="text-4xl font-bold text-apple-blue-600 mb-2">¥99</div>
+                        <p class="text-apple-gray-600">全方位玄学指导</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            包含精算版所有功能
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            奇门遁甲预测
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            姓名学改运建议
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 text-xs">✓</span>
+                            </span>
+                            玄学大师一对一指导
+                        </li>
+                    </ul>
+                    <button class="w-full button-primary text-white py-4 px-6 rounded-2xl font-semibold">
+                        立即购买
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl sm:text-5xl font-bold text-apple-gray-900 mb-6 font-chinese">
+                    玄学爱好者见证
+                </h2>
+                <p class="text-xl text-apple-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    听听资深玄学爱好者的真实体验
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-apple-gray-50 rounded-3xl p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-apple-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">李</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-apple-gray-900">李女士 · 玄学爱好者</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        "紫薇斗数分析非常准确，特别是对我命宫主星的解读很到位。按照建议调整风水布局后，事业确实有了明显改善。"
+                    </p>
+                </div>
+                
+                <div class="bg-apple-gray-50 rounded-3xl p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">王</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-apple-gray-900">王先生 · 易学研究者</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        "中西方玄学结合的理念很新颖，易经八卦与星座学的融合分析让我耳目一新。测算结果专业详细，值得信赖。"
+                    </p>
+                </div>
+                
+                <div class="bg-apple-gray-50 rounded-3xl p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">张</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-apple-gray-900">张女士 · 命理咨询师</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        "作为从业多年的命理师，我认为这个平台的算法很专业。奇门遁甲的时空预测功能特别实用，为客户提供了很好的参考。"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-apple-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl sm:text-5xl font-bold text-apple-gray-900 mb-6 font-chinese">
+                    玄学答疑解惑
+                </h2>
+                <p class="text-xl text-apple-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    解答您关于玄学测算的疑问
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <h3 class="text-lg font-bold text-apple-gray-900 mb-4">玄学测算的理论依据是什么？</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        我们的测算体系融合了紫薇斗数、易经八卦、西方星座学、姓名学等多重玄学理论。紫薇斗数有1000多年历史，易经更是中华文明的瑰宝，结合现代数据分析技术，确保测算的专业性和准确性。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <h3 class="text-lg font-bold text-apple-gray-900 mb-4">为什么要结合中西方玄学？</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        东方玄学注重阴阳五行、天人合一的整体观念，西方星座学则更关注个性特质和心理分析。两者结合能够提供更全面、更立体的命运解读，既有东方的深邃智慧，又有西方的科学理性。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <h3 class="text-lg font-bold text-apple-gray-900 mb-4">生辰信息的准确性有多重要？</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        生辰八字是玄学测算的根基，出生时间的准确性直接影响紫薇命盘的排列和五行格局的判断。建议提供精确到时辰的出生时间，这样才能获得最准确的命理分析。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <h3 class="text-lg font-bold text-apple-gray-900 mb-4">玄学测算能改变命运吗？</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        玄学的价值在于"知命而后改运"。通过了解自己的命理特点和运势走向，可以在关键时刻做出更明智的选择，趋吉避凶。命运三分天注定，七分靠打拼，玄学是指导人生的智慧工具。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 card-hover">
+                    <h3 class="text-lg font-bold text-apple-gray-900 mb-4">如何正确对待玄学测算结果？</h3>
+                    <p class="text-apple-gray-600 leading-relaxed">
+                        玄学测算应作为人生参考，而非绝对依据。建议以开放包容的心态对待测算结果，取其精华，结合自己的实际情况理性判断。玄学的最高境界是帮助人们更好地认识自己，把握人生。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-apple-gray-900 text-white section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-8 h-8 bg-gradient-to-r from-apple-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">天</span>
+                        </div>
+                        <span class="text-xl font-bold font-chinese">天机运势</span>
+                    </div>
+                    <p class="text-apple-gray-400 mb-6 leading-relaxed">
+                        融汇中西方玄学精髓的专业运势测算平台，为您的人生指引明路。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-apple-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">微信</span>
+                            💬
+                        </a>
+                        <a href="#" class="text-apple-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">微博</span>
+                            📱
+                        </a>
+                        <a href="#" class="text-apple-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">QQ</span>
+                            💻
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">玄学服务</h3>
+                    <ul class="space-y-3 text-apple-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">紫薇斗数</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">易经八卦</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">星座运势</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">姓名学分析</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">学习中心</h3>
+                    <ul class="space-y-3 text-apple-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">玄学入门</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">命理知识</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">改运方法</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">大师讲堂</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3 text-apple-gray-400">
+                        <li>玄学咨询：293521405@qq.com</li>
+                        <li>服务时间：9:00-21:00</li>
+                        <li>客服热线：400-888-8888</li>
+                        <li>地址：北京市朝阳区玄学文化园</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-apple-gray-800 pt-8 text-center text-apple-gray-400">
+                <p>&copy; 2024 天机运势. 版权所有 秦芮 | 玄学咨询邮箱：293521405@qq.com</p>
+                <p class="mt-2 text-sm">
+                    本网站玄学内容仅供参考，请理性对待命理测算结果 | 传承玄学文化，弘扬东方智慧
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="fortune-calculator.js"></script>
+    <script>
+        function scrollToCalculator() {
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.72)';
+            }
+        });
+    </script>
+</body>
+</html>
